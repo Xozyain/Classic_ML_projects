@@ -40,7 +40,7 @@ class LinearRegression:
         for i in range(self.max_iter):
             weight_change = self.descent.step(x, y)
             self.loss_history.append(self.descent.calc_loss(x, y))
-            if (any(np.isnan(weight_change.astype(np.float))) == True) or norm(weight_change) ** 2 < self.tolerance:  # нужно бы заменить на np.nan
+            if (any(np.isnan(weight_change.astype(np.float64))) == True) or norm(weight_change) ** 2 < self.tolerance:  # нужно бы заменить на np.nan
                     break
         return self
 
